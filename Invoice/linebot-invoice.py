@@ -16,8 +16,8 @@ except ImportError:
 content = requests.get('http://invoice.etax.nat.gov.tw/invoice.xml')
 tree = ET.fromstring(content.text)  #解析XML
 items = list(tree.iter(tag='item'))  #取得item標籤內容
-line_bot_api = LineBotApi('J2XeDM9OObzPlnTAJjNxiZ42wxLub2g994oDgpzIELH7FefgpfQiD2IRG51DacSQ+iuCvb+8eyQHcheiiSuOshdbsx2FusjZZwL9L6H8DjADWARvdrdJS72cST9iZ692EuKtyaTQxiy+Ffay7AeeHgdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('f093c64fab6dbc9c91095fe72efa6bcb')
+line_bot_api = LineBotApi('token')
+handler = WebhookHandler('secret')
 
 def monoNum1(n):
     title = items[n][0].text  #期別
